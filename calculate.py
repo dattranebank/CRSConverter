@@ -3,7 +3,7 @@ import geopandas as gpd
 
 def calculate_area(shp_gdf):
     # Tính diện tích cho mỗi đối tượng trong GeoDataFrame
-    shp_gdf['area km2'] = shp_gdf.geometry.area
+    shp_gdf['area km2'] = shp_gdf.geometry.area/1_000_000
 
     # In ra diện tích của một số đối tượng
     print(shp_gdf[['geometry', 'area km2']].head())

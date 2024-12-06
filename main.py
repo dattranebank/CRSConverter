@@ -9,17 +9,21 @@ from export import *
 
 def main():
     # Đường dẫn shapefile
-    shp_path = "D:\\VQG_TramChim\\01_base_maps_raw_data\\Administrative Boundary Map\\gadm41_VNM_0.shp"
+    shp_path = "D:\\VQG_TramChim\\01_base_maps_raw_data\\gadm41_VNM_2.shp"
     # Đọc shapefile
     shp_gdf = read_shp(shp_path)
+
     # Chuyển đổi WGS 1984 sang WGS 1984 UTM Zone 48N
     gdf_1984_48n = from_1984_to_1948_48n(shp_gdf)
+    # Chuyển đổi WGS 1984 48N sang VN2000 48N
+    # gdf_vn2000_48n = from_1948_48n_to_vn2000_48n(gdf_1984_48n)
+
     # Tính diện tích
     gdf_1984_48n = calculate_area(gdf_1984_48n)
+    # gdf_vn2000_48n = calculate_area(gdf_vn2000_48n)
     # Xuất shapefile
-    export_shp(gdf_1984_48n)
-
-    print("Shapefile đã được chuyển đổi và lưu thành công!")
+    export_shp(gdf_1984_48n, "Dongthap_admin_boundaries_1984_48n.shp")
+    # export_shp(gdf_vn2000_48n, "Vietnam_2000_48n.shp")
 
 
 if __name__ == "__main__":
