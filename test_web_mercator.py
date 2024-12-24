@@ -3,7 +3,7 @@ import geopandas as gpd
 # Đường dẫn tệp shapefile đầu vào
 input_shp = "D:\\VQG_TramChim\\02_base_maps_WGS1984_48N\\Vietnam_1984_48n.shp"
 # Đường dẫn tệp shapefile đầu ra
-output_shp = "Vietnam_1984_Web_Mercator.shp"
+output_shp = "Vietnam_abc.shp"
 
 # Mở tệp shapefile
 gdf = gpd.read_file(input_shp)

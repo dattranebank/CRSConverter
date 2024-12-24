@@ -9,7 +9,7 @@ from export import *
 
 def main():
     # Đường dẫn shapefile
-    shp_path = "D:\\VQG_TramChim\\01_base_maps_raw_data\\gadm41_VNM_2.shp"
+    shp_path = "D:\\VQG_TramChim\\01_base_maps_raw_data\\DongThap.shp"
     # Đọc shapefile
     shp_gdf = read_shp(shp_path)
 
@@ -22,7 +22,7 @@ def main():
     gdf_1984_48n = calculate_area(gdf_1984_48n)
     # gdf_vn2000_48n = calculate_area(gdf_vn2000_48n)
     # Xuất shapefile
-    export_shp(gdf_1984_48n, "Dongthap_admin_boundaries_1984_48n.shp")
+    export_shp(gdf_1984_48n, "DongThap_1984_48n.shp")
     # export_shp(gdf_vn2000_48n, "Vietnam_2000_48n.shp")
 
 
